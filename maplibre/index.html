@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Zeitreise durch Edelsfeld</title>
+    <meta property="og:description" content="Zeitreise durch Edelsfeld mit MapLibre" />
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@5.21.1/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@5.21.1/dist/maplibre-gl.js'></script>
+    <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+    <script src="./script.js" defer></script>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="map">
+    <div class="map-title" id="mapTitle">
+        Zeitreise durch Edelsfeld
+        <span>von Dominik Haas</span>
+    </div>
+  </div>
+  <div id="time-control">
+      <div id="time-label"></div>    
+      
+      <input type="range" id="time-slider">
+      
+      <div class="time-buttons">
+        <button data-step="-1" data-unit="year">-1 Jahr</button>
+        <button data-step="-1" data-unit="month">-1 Monat</button>
+        <button data-step="-1" data-unit="day">-1 Tag</button>
+        
+        <button data-step="1" data-unit="day">+1 Tag</button>
+        <button data-step="1" data-unit="month">+1 Monat</button>
+        <button data-step="1" data-unit="year">+1 Jahr</button>
+      </div>
+  </div>
+
+  <div class="toggle-box">
+        <p class="legend-link">
+          <a href="https://geodaten.bayern.de/ba-data/Hilfe/Legende_standard.pdf" target="_blank">Legende</a>
+        </p>
+        <!-- <p>
+          <input type="checkbox" id="lod2gebaeude-toggle" class="switch"><span class="slider"></span>
+          <label for="lod2gebaeude-toggle">3D Gebäude mit Dachformen</label>
+        </p> -->
+        <p>
+          <input type="checkbox" id="hausnamen-toggle" class="switch"><span class="slider"></span>
+          <label for="hausnamen-toggle">Hausnamen und alte Hausnummern</label>
+          
+        </p>
+        <p>
+          <input type="checkbox" id="gebbez-toggle" class="switch"><span class="slider"></span>
+          <label for="gebbez-toggle">Gebäudebezeichnung</label>
+        </p>
+        <p>
+          <input type="checkbox" id="luftbild-toggle" class="switch"><span class="slider"></span>
+          <label for="luftbild-toggle">Luftbild</label>
+      </p>
+  </div>
+</body>
+</html>
