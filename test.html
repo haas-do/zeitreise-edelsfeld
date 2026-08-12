@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Add a PMTiles vector source</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.28.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.28.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    const map = new mapboxgl.Map({
+        accessToken: 'pk.eyJ1IjoiaGFhcy1kbyIsImEiOiJjbWZ5eXR0ZzkwM2w5MmtxeXUxNjYwdmQyIn0.JabLD01uXkzxBH0s_9Xyew',
+        container: 'map',
+        style: 'mapbox://styles/mapbox/standard',
+        // Configure the Mapbox Standard style to use the monochrome basemap theme with the night light preset
+        config: {
+            basemap: {
+                theme: 'monochrome',
+                lightPreset: 'night'
+            }
+        },
+        zoom: 1.78,
+        center: [-103.64548, 51.14245]
+    });
+
+    map.on('load', () => {
+        // Add a vector source from a PMTiles file including USGS earthquake data from April 2026
+        map.addSource('pmtiles-earthquakes', {
+            type: 'vector',
+            url: 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.pmtiles'
+        });
+
+        // Add a circle layer to visualize the earthquake data
+        map.addLayer({
+            id: 'pmtiles-vector-layer',
+            type: 'circle',
+            source: 'pmtiles-earthquakes',
+            'source-layer': 'earthquakes', // Replace with your source layer name
+            paint: {
+                'circle-color': 'transparent',
+                'circle-stroke-color': 'teal',
+                'circle-stroke-width': 0.5,
+                'circle-radius': 3,
+                'circle-emissive-strength': 1
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
