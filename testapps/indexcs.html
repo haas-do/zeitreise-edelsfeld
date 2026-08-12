@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Zeitreise durch Edelsfeld mit Cesium 3D</title>
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.97/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.97/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+  <script src="./scriptcs.js" defer></script>
+  <link href="stylecs.css" rel="stylesheet" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<div id="cesiumContainer"></div>
+
+<div id="time-control">
+      <div id="time-label"></div>    
+      
+      <input type="range" id="time-slider">
+      
+      <div class="time-buttons">
+        <button data-step="-1" data-unit="year">-1 Jahr</button>
+        <button data-step="-1" data-unit="month">-1 Monat</button>
+        <button data-step="-1" data-unit="day">-1 Tag</button>
+        
+        <button data-step="1" data-unit="day">+1 Tag</button>
+        <button data-step="1" data-unit="month">+1 Monat</button>
+        <button data-step="1" data-unit="year">+1 Jahr</button>
+      </div>
+</div>
+</body>
+</html>

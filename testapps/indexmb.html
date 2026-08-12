@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Zeitreise durch Edelsfeld</title>
+    <meta property="og:description" content="Zeitreise durch Edelsfeld mit MapBox" />
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.28.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.28.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="./scriptmb.js" defer></script>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="map">
+    <div class="map-title" id="mapTitle">
+        Zeitreise durch Edelsfeld
+        <span>von Dominik Haas</span>
+    </div>
+  </div>
+  <div id="time-control">
+      <div id="time-label"></div>    
+      
+      <input type="range" id="time-slider">
+      
+      <div class="time-buttons">
+        <button data-step="-1" data-unit="year">-1 Jahr</button>
+        <button data-step="-1" data-unit="month">-1 Monat</button>
+        <button data-step="-1" data-unit="day">-1 Tag</button>
+        
+        <button data-step="1" data-unit="day">+1 Tag</button>
+        <button data-step="1" data-unit="month">+1 Monat</button>
+        <button data-step="1" data-unit="year">+1 Jahr</button>
+      </div>
+  </div>
+</body>
+</html>
