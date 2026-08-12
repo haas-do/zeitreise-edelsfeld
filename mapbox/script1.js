@@ -265,8 +265,6 @@ const map = new mapboxgl.Map({
         map.addSource('zr', {
             type: 'vector',
             url: "https://haas-do.github.io/zeitreise-edelsfeld/data/pmtiles-3857/zeitreise_3857.pmtiles"
-            //url: "https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.pmtiles"
-            //url: "https://vtod1.bayernwolke.de/tiles/web_vektor_by/web_vektor_by.json"
         }
     );
     map.addSource('wms', {
